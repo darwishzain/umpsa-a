@@ -31,4 +31,9 @@ chrome.storage.sync.get(['username','password','role'],result=>{
   }
 })
 
+chrome.webNavigation.onCompleted.addListener(function(details) {
+  chrome.tabs.executeScript(details.tabId, { file: 'content.js' });
+}, { url: [{ urlMatches: 'https://ecomm.ump.edu.my/*' }, { urlMatches: 'https://kalam.ump.edu.my/*' }] });
+
+
 

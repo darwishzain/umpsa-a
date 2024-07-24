@@ -6,7 +6,20 @@
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["tabs", "scripting","storage"],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "cookies"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://ecomm.ump.edu.my/*", "*://kalam.ump.edu.my/*"],
+      "js": ["foregroup.js"]
+    }
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
@@ -16,5 +29,5 @@
       "128": "./images/ump_128.png"
     }
   },
-  "host_permissions": ["https://ecomm.ump.edu.my/*"]
+  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*"]
 }
