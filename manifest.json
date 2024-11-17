@@ -1,12 +1,25 @@
 {
-  "name": "UMP ECOMM AutoLogin",
+  "name": "UMP AutoLogin",
   "description": "To help UMP Students and Staffs have better login experiences on autologin feature with saved username and password.",
   "version": "1.0.1",
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
   },
-  "permissions": ["tabs", "scripting","storage"],
+  "permissions": [
+    "tabs",
+    "scripting",
+    "storage",
+    "activeTab",
+    "webNavigation",
+    "cookies"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://ecomm.ump.edu.my/*", "*://kalam.ump.edu.my/*"],
+      "js": ["foregroup.js"]
+    }
+  ],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -16,5 +29,13 @@
       "128": "./images/ump_128.png"
     }
   },
-  "host_permissions": ["https://ecomm.ump.edu.my/*"]
+  "commands": {
+    "toggle-feature": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L"
+      },
+      "description": "Trigger AutoLogin"
+    }
+  },
+  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"]
 }
