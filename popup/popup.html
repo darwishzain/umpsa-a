@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="popup.css">
+    <title>UMP AutoLogin</title>
+  </head>
+  <body>
+
+      <div class="text-center border border-primary border-2">
+        <div class="">
+          <h2>UMP ECOMM Login Profile</h2>
+        </div >
+        <div class="">
+          <p>
+          Please input your username and password to add/change your credentials. Your credentials will not be shared to any 3rd party and will be stored in your local browser storage.
+          </p>
+        </div>
+      </div>
+<br>
+      <form action="" name="myForm">
+        <div class="">
+          <input class="input form-control" type="text" id="username" placeholder="Please enter your username here!" required onblur="checkForm()"/>
+          <input class="input form-control" type="password" id="password" placeholder="Please enter your password here!" required onblur="checkForm()"/>
+        </div>
+       <br>
+        <div class="flex">
+          <input type="radio" id="html" name="role" value="Pelajar" onblur="checkForm()"/>
+          <label for="html">Student</label><br />
+          <input type="radio" id="css" name="role" value="Staf" onblur="checkForm()"/>
+          <label for="css">Staff</label><br />
+        </div>
+        <br>
+        <button type="submit" class="btn btn-success" id="save" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to save your username and password in google storage" disabled="disabled">Save Credential !</button>
+      
+      </form>
+
+      <button type="submit" id="show" class="btn btn-secondary">Show Credential !</button>
+
+
+      <p id="status"></p>
+
+      <div id="userInfo">
+        <p>
+          Your account info:
+          <br>Username: <span id="usernameInfo"></span> 
+          <br>Password: <span id="passwordInfo"></span>
+          <br>Role: <span id="roleInfo"></span>
+        </p>
+      </div>
+      <div id="link">
+        <div class="btn-group">
+          <a class="btn btn-primary" href="https://ecomm.ump.edu.my" target="_blank">Community</a>
+          <a class="btn btn-primary" href="https://or.ump.edu.my" target="_blank">OR</a>
+          <a class="btn btn-primary" href="https://kalam.ump.edu.my" target="_blank">Kalam</a>
+        </div>
+      </div>
+     
+    </div>
+
+    <script src="popup.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  </body>
+</html>
