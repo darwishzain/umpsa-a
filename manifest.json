@@ -2,6 +2,10 @@
   "name": "UMP AutoLogin",
   "description": "To help UMP Students and Staffs have better login experiences on autologin feature with saved username and password.",
   "version": "1.0.1",
+  "version_name" : "1.0.1 base",
+  "author" : {
+    "email" : "darwishzainstudio@gmail.com"
+  },
   "manifest_version": 3,
   "background": {
     "service_worker": "background.js"
@@ -20,6 +24,11 @@
       "js": ["foregroup.js"]
     }
   ],
+  "icons": {
+    "16": "./images/ump_16.png",
+    "48": "./images/ump_48.png",
+    "128": "./images/ump_128.png"
+  },
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -37,5 +46,8 @@
       "description": "Trigger AutoLogin"
     }
   },
+  "homepage_url" : "https://halaman.jeli.com.my/u/1/index.html",
+  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"],
+  "short_name" : "umpsa-n",
   "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"]
 }
