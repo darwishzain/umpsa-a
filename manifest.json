@@ -48,5 +48,6 @@
   },
   "homepage_url" : "https://halaman.jeli.com.my/u/1/index.html",
   "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"],
-  "short_name" : "umpsa-n"
+  "short_name" : "umpsa-n",
+  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"]
 }

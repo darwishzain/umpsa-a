@@ -2,7 +2,7 @@
 function save_options() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
-  var role = document.forms["myForm"]["role"].value;
+  var role = document.forms["loginform"]["role"].value;
 
   chrome.storage.sync.set(
     {
@@ -41,9 +41,8 @@ function show() {
 
 function checkForm() {
   var username = document.getElementById("username").value;
-
   var password = document.getElementById("password").value;
-  var role = document.forms["myForm"]["role"].value;
+  var role = document.forms["loginform"]["role"].value;
 
   var usernameCanSubmit,
     passwordCanSubmit,
@@ -97,6 +96,6 @@ document.getElementById("show").addEventListener("click", show);
 
 document.getElementById("username").addEventListener("blur", checkForm);
 document.getElementById("password").addEventListener("blur", checkForm);
-document.getElementById("html").addEventListener("blur", checkForm);
-document.getElementById("css").addEventListener("blur", checkForm);
+document.getElementById("student").addEventListener("blur", checkForm);
+document.getElementById("staff").addEventListener("blur", checkForm);
 
