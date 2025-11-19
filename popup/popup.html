@@ -1,67 +1,71 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="popup.css">
     <title>UMP AutoLogin</title>
   </head>
   <body>
-
-      <div class="text-center border border-primary border-2">
-        <div class="">
-          <h2>UMP ECOMM Login Profile</h2>
-        </div >
-        <div class="">
-          <p>
-          Please input your username and password to add/change your credentials. Your credentials will not be shared to any 3rd party and will be stored in your local browser storage.
-          </p>
-        </div>
+      <div class="text-center">
+        <h2>UMPSA Login Profile</h2>
+        <h6 class="text-secondary">
+          Please input your username and password to add/change your credentials.
+        </h6>
       </div>
-<br>
+      <div class="d-flex justify-content-center p-2 ">
+        <a class="btn btn-outline-primary rounded-pill mx-1" href="https://ecomm.ump.edu.my" target="_blank">EComm <i class="bi bi-box-arrow-up-right"></i></a>
+        <a class="btn btn-outline-primary rounded-pill mx-1" href="https://or.ump.edu.my" target="_blank">OR <i class="bi bi-box-arrow-up-right"></i></a>
+        <a class="btn btn-outline-primary rounded-pill mx-1" href="https://kalam.umpsa.edu.my" target="_blank">Kalam <i class="bi bi-box-arrow-up-right"></i></a>
+        <a class="btn btn-outline-primary rounded-pill mx-1" href="https://gading.ump.edu.my" target="_blank">Gading <i class="bi bi-box-arrow-up-right"></i></a>
+      </div>
+      <p id="status" class="text-center"></p>
       <form action="" name="loginform">
         <div class="">
           <input class="input form-control" type="text" id="username" placeholder="Please enter your username here!" required onblur="checkForm()"/>
           <input class="input form-control" type="password" id="password" placeholder="Please enter your password here!" required onblur="checkForm()"/>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="role" id="student" value="Pelajar" onchange="checkForm()">
+            <label class="form-check-label" for="student">Student</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="role" id="staff" value="Staf" onchange="checkForm()">
+            <label class="form-check-label" for="staff">Staff</label>
+          </div>
+<br>
+          <div class="text-center">
+            <button type="button" id="save" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to save your username and password in google storage">Save credentials</button>
+          </div>
         </div>
-       <br>
-        <div class="flex">
-          <input type="radio" id="student" name="role" value="Pelajar" onblur="checkForm()"/>
-          <label for="student">Student</label><br />
-          <input type="radio" id="staff" name="role" value="Staf" onblur="checkForm()"/>
-          <label for="staff">Staff</label><br />
-        </div>
-        <br>
-        <button type="submit" class="btn btn-success" id="save" data-bs-toggle="tooltip" data-bs-placement="top" title="Click here to save your username and password in google storage" disabled="disabled">Save Credential !</button>
-
       </form>
-
-      <button type="submit" id="show" class="btn btn-secondary">Show Credential !</button>
-      <p id="status"></p>
-
-      <div id="userInfo">
+      <button type="submit" id="show" class="btn btn-secondary">Show Credentials</button><br><br>
+      <div class="border border-1 border-primary">
+        <h6 class="text-center">Your Account Info</h6>
         <p>
-          Your account info:
-          <br>Username: <span id="usernameInfo"></span>
+          Username: <span id="usernameInfo"></span>
           <br>Password: <span id="passwordInfo"></span>
           <br>Role: <span id="roleInfo"></span>
         </p>
       </div>
-
-      <div id="link">
-        <div class="btn-group">
-          <a class="btn btn-primary" href="https://ecomm.ump.edu.my" target="_blank">Community</a>
-          <a class="btn btn-primary" href="https://or.ump.edu.my" target="_blank">OR</a>
-          <a class="btn btn-primary" href="https://kalam.ump.edu.my" target="_blank">Kalam</a>
-        </div>
-      </div>
     </div>
-    <div>
-     <p>Forked from <a href="https://github.com/oscarchuaweiwen-fsd/-Extension-UMP-AutoLogin" target="_blank" rel="noopener noreferrer">oscarchuaweiwen-fsd/-Extension-UMP-AutoLogin</a></p>
-       <p>Developed by <a href="https://github.com/darwishzain/umpsa-a" target="_blank" rel="noopener noreferrer"></i>darwishzain/umpsa-a</a></p>
+    <div class="text-center text-secondary">
+      <p>Note: Your credentials are stored securely using Chrome's sync storage.</p>
+      <p>Forked from
+        <a href="https://github.com/oscarchuaweiwen-fsd/-Extension-UMP-AutoLogin"
+          target="_blank" rel="noopener noreferrer">
+          oscarchuaweiwen-fsd/-Extension-UMP-AutoLogin
+        </a>
+      </p>
+      <p>Developed and maintained by 
+        <a href="https://github.com/darwishzain/umpsa-a" 
+          target="_blank" rel="noopener noreferrer">
+          darwishzain/umpsa-a
+        </a>
+      </p>
     </div>
-    <script src="content.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="popup.js"></script>
   </body>
 </html>

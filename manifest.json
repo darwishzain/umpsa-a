@@ -1,8 +1,9 @@
 {
   "name": "UMP AutoLogin",
-  "description": "To help UMP Students and Staffs have better login experiences on autologin feature with saved username and password.",
-  "version": "1.0.1",
-  "version_name" : "1.0.1 base",
+  "description":
+    "To help UMP Students and Staffs have better login experiences on autologin feature with saved username and password. Supports EComm, Kalam and OR system.",
+  "version": "1.0.2",
+  "version_name" : "1.0.2 expand",
   "author" : {
     "email" : "darwishzainstudio@gmail.com"
   },
@@ -20,7 +21,7 @@
   ],
   "content_scripts": [
     {
-      "matches": ["*://ecomm.ump.edu.my/*", "*://kalam.ump.edu.my/*"],
+      "matches": ["*://ecomm.ump.edu.my/*", "*://kalam.umpsa.edu.my/login/*"],
       "js": ["foregroup.js"]
     }
   ],
@@ -46,8 +47,7 @@
       "description": "Trigger AutoLogin"
     }
   },
-  "homepage_url" : "https://halaman.jeli.com.my/u/1/index.html",
-  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"],
-  "short_name" : "umpsa-n",
-  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.ump.edu.my/login/*","https://or.ump.edu.my/*"]
+  "homepage_url" : "https://github.com/darwishzain/umpsa-a",
+  "host_permissions": ["https://ecomm.ump.edu.my/*","https://kalam.umpsa.edu.my/login/*","https://or.ump.edu.my/*"],
+  "short_name" : "umpsa-a"
 }

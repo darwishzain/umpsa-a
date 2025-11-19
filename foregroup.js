@@ -4,7 +4,7 @@
 const currentUrl = window.location.href;
 
 // Check if the URL matches either of the target URLs
-if (currentUrl.includes("ecomm.ump.edu.my") || currentUrl.includes("kalam.ump.edu.my")) {
+if (currentUrl.includes("ecomm.ump.edu.my") || currentUrl.includes("kalam.umpsa.edu.my/login/") || currentUrl.includes("or.ump.edu.my/or/")) {
   // Retrieve the stored username, password, and role from Chrome storage
   chrome.storage.sync.get(["username", "password", "role"], (result) => {
 
@@ -35,9 +35,9 @@ if (currentUrl.includes("ecomm.ump.edu.my") || currentUrl.includes("kalam.ump.ed
       }, 500);
     }
 
-    // Check if the current URL is kalam.ump.edu.my
-    if (currentUrl.includes("kalam.ump.edu.my")) {
-      // Get the login form elements for kalam.ump.edu.my
+    // Check if the current URL is kalam.umpsa.edu.my
+    if (currentUrl.includes("kalam.umpsa.edu.my/login/")) {
+      // Get the login form elements for kalam.umpsa.edu.my
       var kalamUsername = document.getElementById("username");
       var kalamPassword = document.getElementById("password");
       var kalambutton = document.getElementById("loginbtn");
@@ -49,6 +49,22 @@ if (currentUrl.includes("ecomm.ump.edu.my") || currentUrl.includes("kalam.ump.ed
       // Click the login button after a delay
       setTimeout(() => {
         kalambutton.click();
+      }, 2000);
+    }
+
+    if (currentUrl.includes("or.ump.edu.my/or/")) {
+      // Get the login form elements for or.ump.edu.my
+      var orUsername = document.getElementById("login");
+      var orPassword = document.getElementById("password");
+      var orbutton = document.getElementById("btn_signin");
+
+      // Set the username and password
+      orUsername.value = result.username;
+      orPassword.value = result.password;
+
+      // Click the login button after a delay
+      setTimeout(() => {
+        orbutton.click();
       }, 2000);
     }
   });

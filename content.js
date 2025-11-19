@@ -1,6 +1,6 @@
 const urlarray = [
     {name:"ecomm",url:"https://ecomm.ump.edu.my"},
-    {name:"kalam",url:"https://kalam.ump.edu.my"},
+    {name:"kalam",url:"https://kalam.umpsa.edu.my"},
     {name:"or",url:"https://or.ump.edu.my"},
     {name:"gading",url:"https://gading.ump.edu.my/ump/f?p=116:99999:115578486505334"}
 ];
@@ -45,13 +45,11 @@ function saveoptions() {
 }
 
 function show() {
-    document.getElementById("userInfo").classList.add("myStyle");
     chrome.storage.sync.get(["username", "password", "role"], (result) => {
         document.getElementById("usernameInfo").innerText = result.username;
         document.getElementById("passwordInfo").innerText = result.password;
         document.getElementById("roleInfo").innerText = result.role;
         setTimeout(function () {
-            document.getElementById("userInfo").classList.remove("myStyle");
             document.getElementById("usernameInfo").innerText = "";
             document.getElementById("passwordInfo").innerText = "";
             document.getElementById("roleInfo").innerText = "";
