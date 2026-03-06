@@ -2,7 +2,7 @@ const urlarray = [
     {name:"ecomm",url:"https://ecomm.ump.edu.my"},
     {name:"kalam",url:"https://kalam.umpsa.edu.my"},
     {name:"or",url:"https://or.ump.edu.my"},
-    {name:"gading",url:"https://gading.ump.edu.my/ump/f?p=116:99999:115578486505334"}
+    {name:"gading",url:"https://gading.ump.edu.my/ump/r/student/sppa-portal/login-page"}
 ];
 const urldiv = document.getElementById('umpurl');
 urlarray.forEach(item => {
