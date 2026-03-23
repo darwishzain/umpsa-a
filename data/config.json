@@ -1,0 +1,35 @@
+{
+    "title":"UMPSA Auto Login",
+    "name":"umpsa-a",
+    "label":"UMPSA A",
+    "links":{
+        "ecomm":
+        {
+            "name":"eComm",
+            "icon":"bi bi-people-fill",
+            "url":"https://ecomm.ump.edu.my",
+            "login":"https://ecomm.ump.edu.my/"
+        },
+        "kalam":
+        {
+            "name":"Kalam",
+            "icon":"bi bi-book",
+            "url":"https://kalam.umpsa.edu.my",
+            "login":"https://kalam.umpsa.edu.my/login/index.php"
+        },
+        "or":
+        {
+            "name":"OR",
+            "icon":"bi bi-plus-circle",
+            "url":"https://or.ump.edu.my",
+            "login":"https://or.ump.edu.my/or/"
+        },
+        "gading":
+        {
+            "name":"Gading",
+            "icon":"bi bi-file-earmark-person",
+            "url":"https://gading.ump.edu.my/ump/r/student/sppa-portal/login-page",
+            "login":"https://gading.ump.edu.my/ump/r/student/sppa-portal/login-page"
+        }
+    }
+}
