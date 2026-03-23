@@ -1,3 +1,29 @@
+fetch(chrome.runtime.getURL("data/config.json"))
+  .then(res => res.json())
+  .then(config => {
+    document.title = config.title;
+    document.getElementById('title').textContent = config.title;
+    const linkscontainer = document.getElementById('links');
+    Object.values(config.links).forEach(link => {
+      const a = document.createElement('a');
+      a.href = link.url;
+      a.target = "_blank";
+      a.classList.add("btn", "btn-outline-primary", "rounded-pill", "mx-1")
+      if (link.icon && link.icon.trim() !== "") {
+        const icon = document.createElement("i");
+        icon.className = link.icon;
+        a.textContent = " " + link.name;
+        
+        a.prepend(icon);
+      }
+      else
+      {
+        a.textContent = link.name;
+      }
+      linkscontainer.appendChild(a);
+    });
+  });
+
 // Saves options to chrome.storage
 function savecreds() {
   var username = document.getElementById("username").value;
